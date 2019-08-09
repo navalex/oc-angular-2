@@ -1,0 +1,13 @@
+<div class="card" [ngClass]="{'border-success': post.loveIts > 0, 'border-danger': post.loveIts < 0}">
+  <div class="card-body">
+    <h3 class="card-title" [ngClass]="{'text-success': post.loveIts > 0, 'text-danger': post.loveIts < 0}">{{ post.title }} <small class="text-muted float-right">{{ post.createdAt | date: 'dd/MM/yyyy - HH:mm' }}</small></h3>
+    <p>{{ post.content }}</p>
+  </div>
+  <div class="card-footer">
+    <div class="btn-group">
+      <button class="btn btn-success" (click)="like()">Like</button>
+      <button class="btn btn-danger" (click)="dislike()">Dislike</button>
+      <button class="btn btn-secondary" disabled>{{ post.loveIts }}</button>
+    </div>
+  </div>
+</div>

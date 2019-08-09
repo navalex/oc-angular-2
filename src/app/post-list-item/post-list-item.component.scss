@@ -1,0 +1,15 @@
+.card {
+  transition: all 0.3s ease;
+
+  &.border-success {
+    background-color: #a4d5ae;
+  }
+
+  &.border-danger {
+    background-color: #f1aeb4;
+  }
+
+  .card-title {
+    transition: color 0.3s ease;
+  }
+}
