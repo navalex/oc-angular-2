@@ -1,5 +1,11 @@
-<div class="row">
-  <div class="col-4" *ngFor="let post of postList">
-    <app-post-list-item [post]="post"></app-post-list-item>
-  </div>
+<div class="jumbotron mt-4 mb-4">
+  <h1>Welcome to the Lorem Blog</h1>
+  <hr>
+  <p>You can actually only like/dislike each post.</p>
 </div>
+
+<ngx-masonry class="row" [options]="{ transitionDuration: '0.3s'}">
+  <div ngxMasonryItem class="post-item col-4" *ngFor="let post of postList | keyvalue">
+    <app-post-list-item [post]="post.value" [id]="post.key"></app-post-list-item>
+  </div>
+</ngx-masonry>
